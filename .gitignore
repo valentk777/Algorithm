@@ -15,3 +15,5 @@ bld/
 
 *.VC.opendb
 *.opendb
+.suo
+ipch/
