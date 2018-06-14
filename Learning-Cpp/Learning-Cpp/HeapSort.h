@@ -6,8 +6,11 @@ public:
 	Heap (int* data, int count);
 
 	void PrintAll ();
+	void PrintAll (int count);
 	void Heapify ();
 	void Add (int sk);
+	void Remove ();
+	void HeapSort ();
 
 private:
 	int arr[100];

@@ -32,6 +32,15 @@ void Heap::PrintAll ()
 	printf ("\n");
 }
 
+void Heap::PrintAll (int localCount)
+{
+	for (int i = 0; i < localCount; i++)
+	{
+		printf ("%d, ", arr[i]);
+	}
+	printf ("\n");
+}
+
 void Heap::Replace (int& i, int& j)
 {
 	int temp = j;
@@ -59,5 +68,41 @@ void Heap::Heapify ()
 			}
 		}
 	}
+}
+
+void Heap::Remove ()
+{
+	int temp = arr[0];
+	arr[0] = arr[count-- - 1];
+	arr[count] = temp;
+	if (count < 2)
+	{
+		return;
+	}
+
+	for (int i = 0; i <= count / 2 - 1; )
+	{
+		int left = 2 * i + 1;
+		int right = 2 * i + 2;
+		int index = right < count && arr[left] < arr[right] ? right : left;
+		if (arr[i] < arr[index])
+		{
+			Replace (arr[i], arr[index]);
+		}
+		else
+			break;
+		i = index;
+	}
+}
+
+void Heap::HeapSort ()
+{
+	Heapify ();
+	int localCount = count;
+	while (count)
+	{
+		Remove ();
+	}
+	PrintAll (localCount);
 }
 
