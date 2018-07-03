@@ -1,4 +1,5 @@
-[![Build status](https://ci.appveyor.com/project/valentk777/learning-cpp)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/valentk777/Learning-Cpp?svg=true)](https://ci.appveyor.com/project/valentk777/learning-cpp)
+
 
 # Learning C++
 Learning C++. Main algorithm implementation using pointers
